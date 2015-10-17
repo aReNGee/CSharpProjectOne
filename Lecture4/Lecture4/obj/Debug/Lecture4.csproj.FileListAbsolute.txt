@@ -1,1 +1,6 @@
 C:\Users\100455888\Humber Fall 2015\Game Programming (GAME 101)\CSharpProjectOne\Lecture4\Lecture4\bin\Debug\Lecture4.exe.config
+C:\Users\100455888\Humber Fall 2015\Game Programming (GAME 101)\CSharpProjectOne\Lecture4\Lecture4\obj\Debug\Lecture4.csprojResolveAssemblyReference.cache
+C:\Users\100455888\Humber Fall 2015\Game Programming (GAME 101)\CSharpProjectOne\Lecture4\Lecture4\bin\Debug\Lecture4.exe
+C:\Users\100455888\Humber Fall 2015\Game Programming (GAME 101)\CSharpProjectOne\Lecture4\Lecture4\bin\Debug\Lecture4.pdb
+C:\Users\100455888\Humber Fall 2015\Game Programming (GAME 101)\CSharpProjectOne\Lecture4\Lecture4\obj\Debug\Lecture4.exe
+C:\Users\100455888\Humber Fall 2015\Game Programming (GAME 101)\CSharpProjectOne\Lecture4\Lecture4\obj\Debug\Lecture4.pdb
