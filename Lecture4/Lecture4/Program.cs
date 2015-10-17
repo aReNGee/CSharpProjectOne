@@ -16,6 +16,8 @@ namespace Lecture4
             string[] illegalNames = new string[3] { "Miguel", "miguel" , ""}; //names the player cannot use
             bool appropriateName; //is the name appropriate
             int counter; //counter variable
+            string playerChoice; //Reads the players input
+            int choiceNumber; //converted choice into a number
 
             Console.WriteLine("Welcome to the world of Swordbreaker! Swords don't last long here, I highly");
             Console.WriteLine("recommend you use axes instead.");
@@ -62,10 +64,45 @@ namespace Lecture4
             Console.Read(); //why do I need two of these? Ask the Teacher
             Console.Read();
 
-            Console.WriteLine("Just kidding! This wouldn't be much of an adventure if you immediately died, would it?");
+            Console.WriteLine("Just kidding! This wouldn't be much of an adventure if you immediately died,");
+            Console.WriteLine("would it?");
+            Console.WriteLine("");
+            Console.WriteLine("Come along now, {0}. You're going to need a weapon as well as a name.", PlayerAlias);
+            Console.WriteLine("Let's get you suited up.");
 
             Console.Read(); //why do I need two of these? Ask the Teacher
-            Console.Read(); 
+            Console.Read();
+
+            Console.WriteLine("Let's see what we have in the Armory...");
+            Console.WriteLine("(To choose a weapon, enter the number of your choice.");
+            Console.WriteLine("1. Knight's Blade");
+            Console.WriteLine("2. Fenching Foil");
+            Console.WriteLine("3. Claymore");
+            Console.WriteLine("4. Falchion");
+            Console.WriteLine("5. Who are you, anyways?");
+
+            yeahthatsright = false; //player has not confirmed thier choice yet
+
+            do
+            {
+                playerChoice = Console.ReadLine(); //reads player imput //why doesn't my code stop here? whyyyyy
+                if (Int32.TryParse(playerChoice, out choiceNumber) && choiceNumber <= 5 && choiceNumber >=1 ) //checks if the player input a number between 1 and 5
+                {
+                    yeahthatsright = true; //lets the program contine
+                }
+                else
+                {
+                    yeahthatsright = false; //rereads input
+                    Console.WriteLine("I'm sorry, I didn't understand. Please re-enter your choice.");
+                }
+
+
+            } while (yeahthatsright == false);
+
+            Console.WriteLine("Excellent! You have chosen option {0}, correct?", choiceNumber);
+            Console.Read();
+
+            
 
         }
     }
