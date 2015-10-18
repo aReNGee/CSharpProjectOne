@@ -8,7 +8,7 @@ namespace Lecture4
 {
     class Program
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             string PlayerAlias = "default"; //myPlayerName
             string yesno; //myDecision
@@ -18,6 +18,7 @@ namespace Lecture4
             int counter; //counter variable
             string playerChoice; //Reads the players input
             int choiceNumber; //converted choice into a number
+            bool legalNumber;
 
             Console.WriteLine("Welcome to the world of Swordbreaker! Swords don't last long here, I highly");
             Console.WriteLine("recommend you use axes instead.");
@@ -74,32 +75,55 @@ namespace Lecture4
             Console.Read();
 
             Console.WriteLine("Let's see what we have in the Armory...");
-            Console.WriteLine("(To choose a weapon, enter the number of your choice.");
+            Console.WriteLine("(To choose a option, enter the number of your choice.)");
             Console.WriteLine("1. Knight's Blade");
             Console.WriteLine("2. Fenching Foil");
             Console.WriteLine("3. Claymore");
             Console.WriteLine("4. Falchion");
             Console.WriteLine("5. Who are you, anyways?");
+            Console.WriteLine("6. What is this place?");
 
             yeahthatsright = false; //player has not confirmed thier choice yet
+            legalNumber = false; //player has not yet entered a legal number
 
             do
             {
-                playerChoice = Console.ReadLine(); //reads player imput //why doesn't my code stop here? whyyyyy
-                if (Int32.TryParse(playerChoice, out choiceNumber) && choiceNumber <= 5 && choiceNumber >=1 ) //checks if the player input a number between 1 and 5
+                do
                 {
-                    yeahthatsright = true; //lets the program contine
+
+
+                    playerChoice = Console.ReadLine(); //reads player imput //why doesn't my code stop here? whyyyyy
+                    if (Int32.TryParse(playerChoice, out choiceNumber) && choiceNumber <= 6 && choiceNumber >= 1) //checks if the player input a number between 1 and 5
+                    {
+                        legalNumber = true; //lets the program contine
+                    }
+                    else
+                    {
+                        legalNumber = false; //rereads input
+                        Console.WriteLine("I'm sorry, I didn't understand. Please re-enter your choice.");
+                    }
+                } while (legalNumber == false);
+
+                Console.WriteLine("Excellent! You have chosen option {0}, correct? (Type 'y' for yes)", choiceNumber);
+                yesno = Console.ReadLine();
+                if (yesno == "y")
+                {
+                    yeahthatsright = true;
                 }
                 else
                 {
-                    yeahthatsright = false; //rereads input
-                    Console.WriteLine("I'm sorry, I didn't understand. Please re-enter your choice.");
+                    Console.WriteLine("Please re-enter your choice.");
+                    Console.WriteLine("(To choose a option, enter the number of your choice.)");
+                    Console.WriteLine("1. Knight's Blade");
+                    Console.WriteLine("2. Fenching Foil");
+                    Console.WriteLine("3. Claymore");
+                    Console.WriteLine("4. Falchion");
+                    Console.WriteLine("5. Who are you, anyways?");
+                    Console.WriteLine("6. What is this place?");
                 }
-
-
             } while (yeahthatsright == false);
 
-            Console.WriteLine("Excellent! You have chosen option {0}, correct?", choiceNumber);
+            Dialogue.whoareyou(PlayerAlias);
             Console.Read();
 
             
