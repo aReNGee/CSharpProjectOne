@@ -8,7 +8,7 @@ namespace Lecture4
 {
     class Program
     {
-        void Main(string[] args)
+        static void Main(string[] args)
         {
             string PlayerAlias = "default"; //myPlayerName
             string yesno; //myDecision
@@ -19,6 +19,8 @@ namespace Lecture4
             string playerChoice; //Reads the players input
             int choiceNumber; //converted choice into a number
             bool legalNumber;
+
+            Dialogue firstDialogue = new Dialogue();
 
             Console.WriteLine("Welcome to the world of Swordbreaker! Swords don't last long here, I highly");
             Console.WriteLine("recommend you use axes instead.");
@@ -86,9 +88,13 @@ namespace Lecture4
             yeahthatsright = false; //player has not confirmed thier choice yet
             legalNumber = false; //player has not yet entered a legal number
 
+            choiceNumber = 0;
+
             do
             {
-                do
+                
+                choiceNumber = firstDialogue.recursiveChoice(6);
+                /* do
                 {
 
 
@@ -102,7 +108,7 @@ namespace Lecture4
                         legalNumber = false; //rereads input
                         Console.WriteLine("I'm sorry, I didn't understand. Please re-enter your choice.");
                     }
-                } while (legalNumber == false);
+                } while (legalNumber == false); */
 
                 Console.WriteLine("Excellent! You have chosen option {0}, correct? (Type 'y' for yes)", choiceNumber);
                 yesno = Console.ReadLine();
@@ -123,7 +129,7 @@ namespace Lecture4
                 }
             } while (yeahthatsright == false);
 
-            Dialogue.whoareyou(PlayerAlias);
+            firstDialogue.whoareyou(PlayerAlias);
             Console.Read();
 
             
